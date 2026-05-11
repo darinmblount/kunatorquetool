@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kuna Torque & Tool — Mobile torque wrench calibration service. We come to your shop. Serving Kuna, Nampa, Caldwell, Meridian, Boise and the Treasure Valley.">
+<meta name="keywords" content="torque wrench calibration, mobile calibration, Kuna Idaho, Nampa, Caldwell, Boise, Treasure Valley, ASME B107.300">
+<meta name="author" content="Kuna Torque & Tool">
+<meta property="og:title" content="Kuna Torque & Tool — Mobile Calibration">
+<meta property="og:description" content="Professional torque wrench calibration on-site at your facility. Certified, documented, same day.">
+<meta property="og:url" content="https://kunatorquetool.com">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kunatorquetool.com">
+<title>Kuna Torque & Tool — Mobile Torque Wrench Calibration | Treasure Valley Idaho</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink:    #111009;
+  --dark:   #1A1814;
+  --mid:    #2A2620;
+  --orange: #E8940A;
+  --orange2:#C1440E;
+  --paper:  #F2EDE4;
+  --muted:  #7A7060;
+  --light:  #C8C0B0;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--ink);
+  color: var(--paper);
+  font-family: 'Oswald', sans-serif;
+  overflow-x: hidden;
+}
+
+/* ── NAV ─────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  background: rgba(17,16,9,0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.nav-wordmark {
+  line-height: 1;
+}
+.nav-wordmark .top {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: var(--paper);
+  display: block;
+}
+.nav-wordmark .bot {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--orange); }
+
+.nav-cta {
+  background: var(--orange2);
+  color: #fff !important;
+  padding: 10px 22px;
+  font-size: 11px !important;
+  letter-spacing: 2px !important;
+}
+.nav-cta:hover { background: var(--orange); color: #fff !important; }
+
+/* ── HERO ────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 70% 50%, rgba(193,68,14,0.07) 0%, transparent 70%),
+    repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,0.015) 59px, rgba(255,255,255,0.015) 60px),
+    repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,0.015) 59px, rgba(255,255,255,0.015) 60px);
+  pointer-events: none;
+}
+
+.hero-text { position: relative; z-index: 2; }
+
+.hero-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: var(--orange);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--orange);
+}
+
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(56px, 7vw, 96px);
+  line-height: 0.92;
+  letter-spacing: 2px;
+  color: var(--paper);
+  margin-bottom: 28px;
+}
+.hero-h1 span { color: var(--orange); }
+
+.hero-sub {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--light);
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.btn-primary {
+  background: var(--orange2);
+  color: #fff;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--orange); }
+
+.btn-ghost {
+  color: var(--light);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200,192,176,0.3);
+  padding-bottom: 2px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.btn-ghost:hover { color: var(--paper); border-color: var(--paper); }
+
+/* hero logo mark — right side */
+.hero-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-mark svg {
+  width: min(440px, 45vw);
+  height: auto;
+  filter: drop-shadow(0 0 60px rgba(232,148,10,0.15));
+  animation: markFadeIn 1.2s ease both;
+}
+
+@keyframes markFadeIn {
+  from { opacity: 0; transform: scale(0.94) rotate(-2deg); }
+  to   { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* stat bar */
+.hero-stats {
+  position: absolute;
+  bottom: 48px;
+  left: 48px;
+  right: 48px;
+  display: flex;
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 28px;
+}
+.stat {
+  flex: 1;
+  padding-right: 32px;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  margin-right: 32px;
+}
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  color: var(--orange);
+  line-height: 1;
+}
+.stat-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* ── SECTION SHARED ──────────────────────────── */
+section { padding: 100px 48px; }
+
+.section-tag {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-tag::before { content: '//'; color: var(--muted); }
+
+.section-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(40px, 5vw, 64px);
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--paper);
+  margin-bottom: 16px;
+}
+
+/* ── SERVICES ────────────────────────────────── */
+.services { background: var(--dark); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: 56px;
+}
+
+.service-card {
+  background: var(--mid);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.25s;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 0;
+  background: var(--orange2);
+  transition: height 0.3s ease;
+}
+.service-card:hover::before { height: 100%; }
+.service-card:hover { background: #302C26; }
+
+.service-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.service-icon {
+  margin-bottom: 20px;
+}
+.service-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 2px;
+  color: var(--paper);
+  margin-bottom: 10px;
+}
+.service-desc {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ── HOW IT WORKS ────────────────────────────── */
+.how { background: var(--ink); }
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.step {
+  padding: 40px 32px 40px 0;
+  border-right: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+.step:last-child { border-right: none; padding-right: 0; }
+.step-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 64px;
+  letter-spacing: 0;
+  color: rgba(255,255,255,0.04);
+  line-height: 1;
+  position: absolute;
+  top: 28px; right: 24px;
+}
+.step-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--paper);
+  margin-bottom: 10px;
+}
+.step-body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+.step-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--orange2);
+  margin-bottom: 20px;
+}
+
+/* ── CERT BAND ───────────────────────────────── */
+.cert-band {
+  background: var(--orange2);
+  padding: 64px 48px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 40px;
+}
+.cert-band-text {}
+.cert-band-eyebrow {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 12px;
+}
+.cert-band-h {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 48px;
+  letter-spacing: 2px;
+  color: #fff;
+  line-height: 1;
+}
+.cert-band-sub {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-top: 8px;
+}
+.cert-sample {
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 28px 32px;
+  min-width: 300px;
+}
+.cs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+.cs-brand {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.cs-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.5);
+  text-align: right;
+}
+.cs-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 20px;
+}
+.cs-field {}
+.csf-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 7px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 2px;
+}
+.csf-val {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #fff;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  padding-bottom: 4px;
+}
+.csf-pass { color: #7FD98A; }
+
+/* ── CONTACT / FOOTER ────────────────────────── */
+footer {
+  background: var(--dark);
+  padding: 80px 48px 40px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 32px;
+}
+.footer-brand .fb-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 3px;
+  color: var(--paper);
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.footer-brand .fb-sub {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer-brand p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.footer-col-title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 20px;
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.footer-col ul li:hover { color: var(--paper); }
+
+.footer-contact p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 2.2;
+}
+.footer-contact p span { color: var(--light); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-bottom p {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+/* ── ANIMATIONS ──────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow { animation: fadeUp 0.5s ease 0.1s both; }
+.hero-h1      { animation: fadeUp 0.6s ease 0.2s both; }
+.hero-sub     { animation: fadeUp 0.6s ease 0.35s both; }
+.hero-actions { animation: fadeUp 0.6s ease 0.45s both; }
+.hero-stats   { animation: fadeUp 0.6s ease 0.6s both; }
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; padding: 100px 28px 160px; }
+  .hero-mark { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .cert-band { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  section { padding: 72px 28px; }
+  .hero-stats { left: 28px; right: 28px; flex-wrap: wrap; gap: 20px; }
+  .stat { border-right: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <svg width="34" height="34" viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="47" stroke="white" stroke-width="3"/>
+      <circle cx="50" cy="50" r="41" stroke="white" stroke-width="1.5" opacity="0.35"/>
+      <line x1="3" y1="50" x2="15" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="11.6" y1="24.6" x2="20.8" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="3" x2="50" y2="15" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="88.4" y1="24.6" x2="79.2" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="97" y1="50" x2="85" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="54" x2="50" y2="17" stroke="#E8940A" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="50,5 45.5,16 54.5,16" fill="#E8940A"/>
+      <circle cx="50" cy="54" r="3.5" stroke="#E8940A" stroke-width="2" fill="none"/>
+      <text x="50" y="82" font-family="'Bebas Neue',sans-serif" font-size="30" fill="none" stroke="white" stroke-width="1.2" text-anchor="middle" letter-spacing="4">KT</text>
+    </svg>
+    <div class="nav-wordmark">
+      <span class="top">KUNA TORQUE</span>
+      <span class="bot">AND TOOL</span>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Services</a></li>
+    <li><a href="#">How It Works</a></li>
+    <li><a href="#">Certificates</a></li>
+    <li><a href="#" class="nav-cta">Book Service</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Mobile Calibration Service</div>
+    <h1 class="hero-h1">We Come<br>To <span>Your</span><br>Shop.</h1>
+    <p class="hero-sub">Professional torque wrench calibration on-site at your facility. Certified, documented, done while you work.</p>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Book a Visit</a>
+      <a href="#" class="btn-ghost">View Services</a>
+    </div>
+  </div>
+
+  <div class="hero-mark">
+    <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="50" cy="50" r="47" stroke="white" stroke-width="3"/>
+      <circle cx="50" cy="50" r="41" stroke="white" stroke-width="1.5" opacity="0.35"/>
+      <line x1="3" y1="50" x2="15" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="11.6" y1="24.6" x2="20.8" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="3" x2="50" y2="15" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="88.4" y1="24.6" x2="79.2" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="97" y1="50" x2="85" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="54" x2="50" y2="17" stroke="#E8940A" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="50,5 45.5,16 54.5,16" fill="#E8940A"/>
+      <circle cx="50" cy="54" r="3.5" stroke="#E8940A" stroke-width="2" fill="none"/>
+      <text x="50" y="82" font-family="'Bebas Neue',sans-serif" font-size="30" fill="none" stroke="white" stroke-width="1.2" text-anchor="middle" letter-spacing="4">KT</text>
+    </svg>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">±2%</div>
+      <div class="stat-label">Accuracy Guaranteed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">ISO</div>
+      <div class="stat-label">17025 Traceable</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">Same</div>
+      <div class="stat-label">Day Certificates</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">0</div>
+      <div class="stat-label">Downtime To You</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <div class="section-tag">Services</div>
+  <h2 class="section-h2">What We Calibrate</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01</div>
+      <div class="service-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="4" y="17" width="28" height="4" rx="2" fill="#E8940A"/>
+          <rect x="15" y="17" width="4" height="14" rx="2" fill="#E8940A"/>
+          <circle cx="18" cy="9" r="5" stroke="#E8940A" stroke-width="2" fill="none"/>
+        </svg>
+      </div>
+      <div class="service-name">Torque Wrenches</div>
+      <div class="service-desc">Click, dial, electronic, and beam-style wrenches. All drive sizes. All ranges.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02</div>
+      <div class="service-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <circle cx="18" cy="18" r="12" stroke="#E8940A" stroke-width="2" fill="none"/>
+          <line x1="18" y1="6" x2="18" y2="11" stroke="#E8940A" stroke-width="2" stroke-linecap="square"/>
+          <line x1="18" y1="25" x2="18" y2="30" stroke="#E8940A" stroke-width="2" stroke-linecap="square"/>
+          <line x1="6" y1="18" x2="11" y2="18" stroke="#E8940A" stroke-width="2" stroke-linecap="square"/>
+          <line x1="25" y1="18" x2="30" y2="18" stroke="#E8940A" stroke-width="2" stroke-linecap="square"/>
+          <line x1="18" y1="18" x2="18" y2="13" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="2" fill="#E8940A"/>
+        </svg>
+      </div>
+      <div class="service-name">Torque Testers</div>
+      <div class="service-desc">Bench-top and inline torque testers calibrated to NIST standards.</div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03</div>
+      <div class="service-icon">
+        <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect x="10" y="8" width="16" height="20" rx="2" stroke="#E8940A" stroke-width="2" fill="none"/>
+          <line x1="14" y1="14" x2="22" y2="14" stroke="#E8940A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="18" x2="22" y2="18" stroke="#E8940A" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="14" y1="22" x2="19" y2="22" stroke="#E8940A" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="service-name">Documentation</div>
+      <div class="service-desc">ISO-traceable certificates issued on-site. Digital and printed records for every tool.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="section-tag">Process</div>
+  <h2 class="section-h2">How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-dot"></div>
+      <div class="step-title">Schedule</div>
+      <div class="step-body">Book online or call. We come to your location — shop, fleet yard, or job site.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-dot"></div>
+      <div class="step-title">We Arrive</div>
+      <div class="step-body">Fully equipped truck. No need to ship tools or halt production.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-dot"></div>
+      <div class="step-title">Calibrate</div>
+      <div class="step-body">Each tool tested against certified reference standards. Adjusted where needed.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-dot"></div>
+      <div class="step-title">Certified</div>
+      <div class="step-body">Calibration certificate issued per tool, same day. Sticker applied and you're done.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CERT BAND -->
+<div class="cert-band">
+  <div class="cert-band-text">
+    <div class="cert-band-eyebrow">ISO Traceable Documentation</div>
+    <div class="cert-band-h">Every Tool.<br>Every Time.</div>
+    <div class="cert-band-sub">Certificates printed and emailed on-site, the same day.</div>
+  </div>
+  <div class="cert-sample">
+    <div class="cs-header">
+      <div class="cs-brand">KUNA TORQUE & TOOL</div>
+      <div class="cs-title">Certificate of<br>Calibration</div>
+    </div>
+    <div class="cs-fields">
+      <div class="cs-field">
+        <div class="csf-label">Instrument</div>
+        <div class="csf-val">Torque Wrench</div>
+      </div>
+      <div class="cs-field">
+        <div class="csf-label">Serial No.</div>
+        <div class="csf-val">TW-00492</div>
+      </div>
+      <div class="cs-field">
+        <div class="csf-label">Range</div>
+        <div class="csf-val">10–250 ft·lb</div>
+      </div>
+      <div class="cs-field">
+        <div class="csf-label">Result</div>
+        <div class="csf-val csf-pass">PASS ✓</div>
+      </div>
+      <div class="cs-field">
+        <div class="csf-label">Cal Date</div>
+        <div class="csf-val">05/07/2026</div>
+      </div>
+      <div class="cs-field">
+        <div class="csf-label">Next Due</div>
+        <div class="csf-val">05/07/2027</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="fb-name">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="47" stroke="white" stroke-width="3"/>
+      <circle cx="50" cy="50" r="41" stroke="white" stroke-width="1.5" opacity="0.35"/>
+      <line x1="3" y1="50" x2="15" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="11.6" y1="24.6" x2="20.8" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="3" x2="50" y2="15" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="88.4" y1="24.6" x2="79.2" y2="33.8" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="97" y1="50" x2="85" y2="50" stroke="white" stroke-width="3" stroke-linecap="square"/>
+      <line x1="50" y1="54" x2="50" y2="17" stroke="#E8940A" stroke-width="2.5" stroke-linecap="round"/>
+      <polygon points="50,5 45.5,16 54.5,16" fill="#E8940A"/>
+      <circle cx="50" cy="54" r="3.5" stroke="#E8940A" stroke-width="2" fill="none"/>
+      <text x="50" y="82" font-family="'Bebas Neue',sans-serif" font-size="30" fill="none" stroke="white" stroke-width="1.2" text-anchor="middle" letter-spacing="4">KT</text>
+        </svg>
+        Kuna Torque & Tool
+      </div>
+      <div class="fb-sub">Mobile Calibration Service</div>
+      <p>Precision calibration that comes to you. Serving shops, fleets, and facilities across the region.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Services</div>
+      <ul>
+        <li>Torque Wrench Calibration</li>
+        <li>Torque Tester Calibration</li>
+        <li>Fleet Programs</li>
+        <li>Annual Contracts</li>
+      </ul>
+    </div>
+    <div class="footer-col footer-contact">
+      <div class="footer-col-title">Contact</div>
+      <p>
+        <span>(555) 000-0000</span><br>
+        kuna@kunatorquetool.com<br>
+        kunatorquetool.com<br><br>
+        <span>Mon–Fri  7am–5pm</span>
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool — All rights reserved</p>
+    <p>ASME B107.300 Referenced</p>
+  </div>
+</footer>
+
+</body>
+</html>
