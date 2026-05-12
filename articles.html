@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Calibration articles, procedures, and guides from Kuna Torque & Tool. Learn why calibration matters, how it works, and what tools need it.">
+<meta property="og:title" content="Articles — Kuna Torque & Tool">
+<meta property="og:url" content="https://kunatorquetool.com/articles">
+<link rel="canonical" href="https://kunatorquetool.com/articles.html">
+<title>Articles & Guides — Kuna Torque & Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0C0A;--dark:#161310;--mid:#231F1B;--border:#2E2926;--orange:#C1440E;--gold:#E8940A;--paper:#F2EDE4;--muted:#6B6358;--light:#B8B0A4;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Barlow Condensed',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--orange);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(14,12,10,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-mark{width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:var(--paper);line-height:1;}
+.nav-name span{color:var(--gold);}
+.nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--paper);}
+.nav-cta{background:var(--orange) !important;color:#fff !important;padding:8px 18px;font-size:8px !important;}
+.nav-cta:hover{background:var(--gold) !important;}
+
+/* PAGE HEADER */
+.page-header{padding:120px 48px 72px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.page-header::after{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(193,68,14,0.08) 0%,transparent 70%);pointer-events:none;}
+.ph-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.ph-eyebrow::before{content:'//';color:var(--muted);}
+.ph-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,8vw,110px);line-height:.88;letter-spacing:2px;color:var(--paper);margin-bottom:24px;}
+.ph-sub{font-family:'Barlow Condensed',sans-serif;font-size:18px;color:var(--muted);line-height:1.6;max-width:520px;}
+
+/* ARTICLES GRID */
+.articles-section{padding:72px 48px;}
+.articles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+
+.article-card{background:var(--dark);padding:36px;display:flex;flex-direction:column;position:relative;overflow:hidden;text-decoration:none;transition:background .2s;}
+.article-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--orange);transition:width .35s ease;}
+.article-card:hover::after{width:100%;}
+.article-card:hover{background:var(--mid);}
+
+.ac-cat{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--orange);text-transform:uppercase;margin-bottom:16px;}
+.ac-title{font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;color:var(--paper);line-height:1.05;margin-bottom:14px;}
+.ac-excerpt{font-family:'Barlow',sans-serif;font-size:14px;color:var(--muted);line-height:1.6;flex:1;margin-bottom:20px;}
+.ac-meta{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.ac-date{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.ac-arrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--orange);}
+
+/* coming soon card */
+.ac-soon{background:var(--mid) !important;opacity:.4;cursor:default;}
+.ac-soon::after{display:none !important;}
+.ac-soon-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:auto;}
+
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px 48px 28px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.footer-back a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back a:hover{color:var(--paper);}
+
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .page-header{padding:100px 24px 56px;}
+  .articles-section{padding:56px 24px;}
+  .articles-grid{grid-template-columns:1fr;}
+  footer{padding:40px 24px 24px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark">
+      <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="46" stroke="rgba(242,237,228,0.3)" stroke-width="3"/>
+        <line x1="50" y1="54" x2="50" y2="16" stroke="#E8940A" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="50,5 45,17 55,17" fill="#E8940A"/>
+        <circle cx="50" cy="54" r="5" stroke="#E8940A" stroke-width="2.5" fill="none"/>
+        <line x1="4" y1="50" x2="16" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+        <line x1="50" y1="4" x2="50" y2="16" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+        <line x1="96" y1="50" x2="84" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-name">KUNA <span>TORQUE</span> & TOOL</div>
+      <div class="nav-tagline">Pick Up · Drop Off · 24 Hr Turnaround</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="articles.html" class="active">Articles</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="ph-eyebrow">Knowledge Base</div>
+  <h1 class="ph-h1">Articles<br>& Guides</h1>
+  <p class="ph-sub">Calibration procedures, industry guides, and everything you need to know about keeping your tools accurate.</p>
+</div>
+
+<section class="articles-section">
+  <div class="articles-grid">
+
+    <a class="article-card" href="why-calibrate.html">
+      <div class="ac-cat">Why It Matters</div>
+      <div class="ac-title">Why Torque Wrench Calibration Matters</div>
+      <div class="ac-excerpt">A miscalibrated torque wrench doesn't look different or feel different. It just quietly delivers the wrong torque — and in critical applications, that costs money, time, or safety.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="how-to-use-torque-wrench.html">
+      <div class="ac-cat">Equipment Guide</div>
+      <div class="ac-title">How to Use, Store & Handle a Torque Wrench</div>
+      <div class="ac-excerpt">Drive selection, proper technique, the one-click rule, and the storage habits that keep wrenches in calibration longer. Most drift isn't from use — it's from mishandling.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="why-calibrate-torque-wrench.html">
+      <div class="ac-cat">10 Years of Experience</div>
+      <div class="ac-title">Torque Wrench Calibration: What a Decade in the Field Taught Me</div>
+      <div class="ac-excerpt">Torque wrenches fail more often than almost anything else we calibrate. Why we recommend 6-month intervals, why new wrenches should be checked before first use, and why repair is usually cheaper than replacement.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="asme-b107-300-explained.html">
+      <div class="ac-cat">Standards Reference</div>
+      <div class="ac-title">Why ASME B107.300? The Standard Behind Torque Calibration</div>
+      <div class="ac-excerpt">What ASME B107.300 actually requires, why it's the right standard for US torque calibration, and what "NIST traceable" means in plain language.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="types-of-torque-wrenches.html">
+      <div class="ac-cat">Equipment Guide</div>
+      <div class="ac-title">The Four Types of Torque Wrenches</div>
+      <div class="ac-excerpt">Click, dial, beam, and electronic — how each type works, where it's used, ASME tolerance requirements, and how each fails at calibration. Which one is right for your shop?</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="critical-torque-applications.html">
+      <div class="ac-cat">Critical Applications</div>
+      <div class="ac-title">When Getting It Wrong Costs More Than a Wrench</div>
+      <div class="ac-excerpt">Cylinder head bolts, the Jesus nut, wheel lug nuts, structural bolting — the applications where torque accuracy is genuinely critical and what happens when it's wrong.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <a class="article-card" href="accreditation-explained.html">
+      <div class="ac-cat">Straight Talk</div>
+      <div class="ac-title">Accreditation: Why We Don't Have It and Why That's Honest</div>
+      <div class="ac-excerpt">What ISO 17025 accreditation actually is, what it costs, why the savings get passed to you, the sticker mill problem, and when accreditation is genuinely required versus assumed.</div>
+      <div class="ac-meta"><span class="ac-date">May 2026</span><span class="ac-arrow">Read →</span></div>
+    </a>
+
+    <div class="article-card ac-soon">
+      <div class="ac-cat">Calibration Intervals</div>
+      <div class="ac-title">How Often Should You Calibrate Your Torque Wrenches?</div>
+      <div class="ac-excerpt">The answer depends on use frequency, application criticality, and your quality system requirements.</div>
+      <div class="ac-soon-label">Coming Soon</div>
+    </div>
+
+    <div class="article-card ac-soon">
+      <div class="ac-cat">Other Instruments</div>
+      <div class="ac-title">Beyond Torque: What Other Shop Tools Need Calibration?</div>
+      <div class="ac-excerpt">Calipers, micrometers, dial indicators — most precision measuring tools drift over time and need documentation.</div>
+      <div class="ac-soon-label">Coming Soon</div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool</p>
+    <div class="footer-back"><a href="index.html">← Back to main site</a></div>
+    <p>NIST Traceable · ASME B107.300</p>
+  </div>
+</footer>
+
+</body>
+</html>

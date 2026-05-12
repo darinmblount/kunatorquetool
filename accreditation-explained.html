@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Why we're not an accredited calibration lab — and why that's the right call for most shops. The real cost of accreditation, sticker mills, and how NIST traceability actually works.">
+<meta name="keywords" content="accredited calibration lab, ISO 17025 accreditation, calibration lab cost, NIST traceable calibration, accreditation vs traceable calibration">
+<link rel="canonical" href="https://kunatorquetool.com/accreditation-explained.html">
+<title>Accreditation: Why We Don't Have It and Why That's Honest — Kuna Torque & Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0C0A;--dark:#161310;--mid:#231F1B;--border:#2E2926;--orange:#C1440E;--gold:#E8940A;--paper:#F2EDE4;--muted:#6B6358;--light:#B8B0A4;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--orange);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(14,12,10,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-mark{width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:var(--paper);line-height:1;}
+.nav-name span{color:var(--gold);}
+.nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--paper);}
+.nav-cta{background:var(--orange) !important;color:#fff !important;padding:8px 18px;font-size:8px !important;}
+.article-header{padding:120px 48px 72px;border-bottom:1px solid var(--border);max-width:900px;}
+.ah-back{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;transition:color .2s;}
+.ah-back:hover{color:var(--paper);}
+.ah-cat{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.ah-cat::before{content:'//';color:var(--muted);}
+.ah-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,96px);line-height:.9;letter-spacing:2px;color:var(--paper);margin-bottom:28px;}
+.ah-meta{display:flex;gap:32px;}
+.ah-date,.ah-author{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);}
+.ah-divider{width:60px;height:2px;background:var(--orange);margin-top:28px;}
+.article-body{max-width:720px;padding:72px 48px 100px;}
+.article-body p{font-size:17px;line-height:1.75;color:#A8A098;margin-bottom:24px;}
+.article-body p strong{color:var(--light);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--paper);margin:52px 0 20px;line-height:1;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;color:var(--light);margin:36px 0 14px;text-transform:uppercase;}
+.callout{background:var(--mid);border-left:3px solid var(--orange);padding:24px 28px;margin:36px 0;}
+.callout p{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--light);line-height:1.6;margin:0;}
+.callout p strong{color:var(--paper);}
+.callout.gold{border-left-color:var(--gold);}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:36px 0;}
+.cg-col{background:var(--dark);padding:28px;}
+.cg-head{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;margin-bottom:16px;}
+.cg-head.orange{color:var(--orange);}
+.cg-head.gold{color:var(--gold);}
+.cg-item{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--border);line-height:1.5;}
+.cg-item strong{color:var(--light);}
+.article-body ul{list-style:none;margin:20px 0 28px;}
+.article-body ul li{font-size:17px;line-height:1.7;color:#A8A098;padding:8px 0 8px 20px;border-bottom:1px solid var(--border);position:relative;}
+.article-body ul li::before{content:'→';position:absolute;left:0;color:var(--orange);}
+.article-body ul li strong{color:var(--light);}
+.article-cta{background:var(--orange);padding:48px;margin-top:64px;}
+.article-cta h3{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+.article-cta p{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.5;}
+.article-cta a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;background:rgba(0,0,0,0.2);color:#fff;padding:14px 28px;text-decoration:none;display:inline-block;transition:background .2s;}
+.article-cta a:hover{background:rgba(0,0,0,0.4);}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 48px 24px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.footer-back a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back a:hover{color:var(--paper);}
+@media(max-width:960px){nav{padding:0 24px;}.nav-links{display:none;}.article-header,.article-body{padding-left:24px;padding-right:24px;}.article-header{padding-top:100px;}.compare-grid{grid-template-columns:1fr;}footer{padding:32px 24px 20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark"><svg width="22" height="22" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="rgba(242,237,228,0.3)" stroke-width="3"/><line x1="50" y1="54" x2="50" y2="16" stroke="#E8940A" stroke-width="4" stroke-linecap="round"/><polygon points="50,5 45,17 55,17" fill="#E8940A"/><circle cx="50" cy="54" r="5" stroke="#E8940A" stroke-width="2.5" fill="none"/><line x1="4" y1="50" x2="16" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/><line x1="96" y1="50" x2="84" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/></svg></div>
+    <div><div class="nav-name">KUNA <span>TORQUE</span> & TOOL</div><div class="nav-tagline">Pick Up · Drop Off · 24 Hr Turnaround</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="article-header">
+  <a class="ah-back" href="articles.html">← All Articles</a>
+  <div class="ah-cat">Straight Talk</div>
+  <h1 class="ah-h1">Accreditation:<br>Why We Don't<br>Have It and<br>Why That's<br>Honest</h1>
+  <div class="ah-meta"><span class="ah-date">May 2026</span><span class="ah-author">Kuna Torque & Tool</span></div>
+  <div class="ah-divider"></div>
+</div>
+
+<div class="article-body">
+
+  <p>We're going to say something most calibration services won't: <strong>for the vast majority of shops and fleets, ISO 17025 laboratory accreditation is not necessary — and the premium you pay for it often has little to do with the quality of your calibration.</strong></p>
+
+  <p>This isn't a dig at accredited labs. Many of them do excellent work. It's an honest explanation of what accreditation actually is, what it costs, why it matters in some contexts and not others, and how we achieve the same technical outcome at a fraction of the price.</p>
+
+  <h2>What Accreditation Actually Is</h2>
+
+  <p>ISO 17025 accreditation is a <strong>quality management system certification</strong> for testing and calibration laboratories. An accrediting body — like A2LA or NVLAP in the US — audits the laboratory's procedures, documentation, equipment management, personnel training, and facility controls against the ISO 17025 standard.</p>
+
+  <p>What accreditation verifies:</p>
+
+  <ul>
+    <li><strong>The lab has documented procedures</strong> — written, followed, and audited</li>
+    <li><strong>Equipment is managed and calibrated</strong> — traceability is documented</li>
+    <li><strong>Personnel are qualified</strong> — training records exist</li>
+    <li><strong>The quality system is audited regularly</strong> — by a third party</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>What accreditation does NOT verify:</strong> That any individual calibration was performed correctly. It verifies that the system around the calibration is documented and audited — not that every single result is right.</p>
+  </div>
+
+  <h2>What Accreditation Costs — and Who Pays</h2>
+
+  <p>Achieving and maintaining ISO 17025 accreditation is expensive. Initial accreditation through a body like A2LA typically runs <strong>$5,000–$15,000 or more</strong> in direct fees alone, plus the cost of consultants, documentation systems, facility upgrades, and staff time. Annual maintenance, surveillance audits, and scope expansions add ongoing costs every year.</p>
+
+  <p>Those costs don't disappear — they get passed on to customers. A calibration that costs $30–75 from us costs $150–300+ from an accredited lab performing the identical procedure with equivalent equipment. <strong>You're paying for the quality management overhead, not better calibration results.</strong></p>
+
+  <h2>The "Sticker Mill" Problem</h2>
+
+  <p>Here's something the industry doesn't talk about enough: <strong>accreditation does not prevent bad calibration work.</strong></p>
+
+  <p>The calibration industry has a well-known problem with what technicians call "sticker mills" — accredited laboratories that have perfected the paperwork and the audit trail while cutting corners on the actual technical work. Volume-driven labs that prioritize throughput over accuracy. Facilities where the accreditation certificate on the wall has nothing to do with what actually happens when your wrench is on the bench.</p>
+
+  <p>Accreditation audits happen on a schedule. The interval between audits is when quality can erode. A facility that looks great during an A2LA audit and processes hundreds of instruments per day between audits may be producing certificates that are technically accredited but practically meaningless.</p>
+
+  <div class="callout gold">
+    <p><strong>Accreditation is a quality system audit. It's not a guarantee of quality results.</strong> The technician's skill, the calibration equipment's condition, and the rigor of the actual procedure matter far more than a certificate on the wall.</p>
+  </div>
+
+  <h2>How We Achieve the Same Technical Result</h2>
+
+  <p>The technical requirements for a valid, traceable calibration are straightforward:</p>
+
+  <ul>
+    <li><strong>Follow the methodology standard</strong> — we use ASME B107.300</li>
+    <li><strong>Use calibrated reference equipment</strong> — our reference standards are sent to a NIST-traceable lab for regular calibration, and we have the certificates to show it</li>
+    <li><strong>Document the results</strong> — we issue a calibration certificate with all the information required to establish traceability</li>
+    <li><strong>Know what you're doing</strong> — 10 years of calibration experience, torque being our primary specialty</li>
+  </ul>
+
+  <p>The chain of traceability is identical: your wrench → our reference standard → NIST-traceable lab → NIST. Whether an accredited lab or a non-accredited one performs that calibration, the traceability chain is the same if the reference standards are properly maintained.</p>
+
+  <div class="compare-grid">
+    <div class="cg-col">
+      <div class="cg-head orange">Accredited Lab</div>
+      <div class="cg-item">ISO 17025 quality system ✓</div>
+      <div class="cg-item">Third-party audited ✓</div>
+      <div class="cg-item">NIST-traceable standards ✓</div>
+      <div class="cg-item">Follows ASME B107.300 ✓</div>
+      <div class="cg-item"><strong>$150–300+ per wrench</strong></div>
+      <div class="cg-item">Ship and wait 1–3 weeks</div>
+      <div class="cg-item">No field service</div>
+    </div>
+    <div class="cg-col">
+      <div class="cg-head gold">Kuna Torque & Tool</div>
+      <div class="cg-item">Documented procedures ✓</div>
+      <div class="cg-item">10 years experience ✓</div>
+      <div class="cg-item">NIST-traceable standards ✓</div>
+      <div class="cg-item">Follows ASME B107.300 ✓</div>
+      <div class="cg-item"><strong>$30–75 per wrench</strong></div>
+      <div class="cg-item">Pickup and dropoff, 24 hours</div>
+      <div class="cg-item">Treasure Valley service area</div>
+    </div>
+  </div>
+
+  <h2>When You Actually Need Accreditation</h2>
+
+  <p>We're going to be straight here too: some applications genuinely require accredited calibration. If your quality system contractually requires ISO 17025 certificates — certain aerospace contracts, some OEM supplier agreements, regulated industries where accreditation is a regulatory requirement — then accreditation is the requirement and there's no workaround.</p>
+
+  <p>But for the majority of shops, fleets, and facilities:</p>
+
+  <ul>
+    <li><strong>ISO 9001 quality systems</strong> — NIST-traceable calibration with proper documentation typically satisfies the requirement</li>
+    <li><strong>General fleet maintenance</strong> — traceable calibration is what matters, not lab certification</li>
+    <li><strong>OEM service work</strong> — check your specific OEM requirements; most accept traceable calibration</li>
+    <li><strong>Safety compliance</strong> — traceability and documentation are the requirements, not ISO 17025</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>If you're not sure what your quality system requires,</strong> pull out the requirement document and look for the specific language. "Calibrated tools" and "traceable calibration" are not the same as "ISO 17025 accredited calibration." Many quality systems have been interpreted more strictly than the actual requirement states.</p>
+  </div>
+
+  <h2>The Bottom Line</h2>
+
+  <p>We don't have accreditation because the overhead of maintaining it would require us to charge prices that don't make sense for our customers — and wouldn't make your wrenches any more accurately calibrated than we already calibrate them.</p>
+
+  <p>What we offer: a decade of calibration experience, NIST-traceable reference equipment, ASME B107.300 methodology, documented certificates, and a pickup-and-dropoff model that costs a fraction of what you'd pay to ship tools to an accredited lab and wait two weeks.</p>
+
+  <p>If your application requires accreditation, we'll tell you that and you should go get it. For everyone else — the savings are yours.</p>
+
+  <div class="article-cta">
+    <h3>Honest Calibration. Fair Prices.</h3>
+    <p>NIST-traceable, ASME B107.300 referenced, and back at your shop within 24 hours.</p>
+    <a href="index.html#quote">Build a Quote →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool</p>
+    <div class="footer-back"><a href="articles.html">← All Articles</a></div>
+    <p>NIST Traceable · ASME B107.300</p>
+  </div>
+</footer>
+</body>
+</html>

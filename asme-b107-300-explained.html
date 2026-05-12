@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Why ASME B107.300 is the standard for torque wrench calibration — what it covers, what it requires, and why it matters for your documentation.">
+<meta name="keywords" content="ASME B107.300 torque wrench, torque calibration standard, ASME torque standard explained, torque wrench calibration methodology">
+<meta property="og:title" content="Why ASME B107.300? The Standard Behind Torque Calibration — Kuna Torque & Tool">
+<link rel="canonical" href="https://kunatorquetool.com/asme-b107-300-explained.html">
+<title>Why ASME B107.300? The Standard Behind Torque Calibration — Kuna Torque & Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0C0A;--dark:#161310;--mid:#231F1B;--border:#2E2926;--orange:#C1440E;--gold:#E8940A;--paper:#F2EDE4;--muted:#6B6358;--light:#B8B0A4;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--orange);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(14,12,10,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-mark{width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:var(--paper);line-height:1;}
+.nav-name span{color:var(--gold);}
+.nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--paper);}
+.nav-cta{background:var(--orange) !important;color:#fff !important;padding:8px 18px;font-size:8px !important;}
+.article-header{padding:120px 48px 72px;border-bottom:1px solid var(--border);max-width:900px;}
+.ah-back{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;transition:color .2s;}
+.ah-back:hover{color:var(--paper);}
+.ah-cat{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.ah-cat::before{content:'//';color:var(--muted);}
+.ah-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,96px);line-height:.9;letter-spacing:2px;color:var(--paper);margin-bottom:28px;}
+.ah-meta{display:flex;gap:32px;}
+.ah-date,.ah-author{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);}
+.ah-divider{width:60px;height:2px;background:var(--orange);margin-top:28px;}
+.article-body{max-width:720px;padding:72px 48px 100px;}
+.article-body p{font-size:17px;line-height:1.75;color:#A8A098;margin-bottom:24px;}
+.article-body p strong{color:var(--light);font-weight:600;}
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--paper);margin:52px 0 20px;line-height:1;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;color:var(--light);margin:36px 0 14px;text-transform:uppercase;}
+.callout{background:var(--mid);border-left:3px solid var(--orange);padding:24px 28px;margin:36px 0;}
+.callout p{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--light);line-height:1.6;margin:0;}
+.callout p strong{color:var(--paper);}
+.callout.gold{border-left-color:var(--gold);}
+.article-body ul{list-style:none;margin:20px 0 28px;}
+.article-body ul li{font-size:17px;line-height:1.7;color:#A8A098;padding:8px 0 8px 20px;border-bottom:1px solid var(--border);position:relative;}
+.article-body ul li::before{content:'→';position:absolute;left:0;color:var(--orange);}
+.article-body ul li strong{color:var(--light);}
+.standard-box{background:var(--dark);border:1px solid var(--border);border-top:2px solid var(--gold);padding:32px;margin:36px 0;}
+.sb-label{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:12px;}
+.sb-title{font-family:'Bebas Neue',sans-serif;font-size:28px;color:var(--paper);letter-spacing:2px;margin-bottom:8px;}
+.sb-body{font-family:'Barlow Condensed',sans-serif;font-size:15px;color:var(--muted);line-height:1.6;}
+.article-cta{background:var(--orange);padding:48px;margin-top:64px;}
+.article-cta h3{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+.article-cta p{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.5;}
+.article-cta a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;background:rgba(0,0,0,0.2);color:#fff;padding:14px 28px;text-decoration:none;display:inline-block;transition:background .2s;}
+.article-cta a:hover{background:rgba(0,0,0,0.4);}
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 48px 24px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.footer-back a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back a:hover{color:var(--paper);}
+@media(max-width:960px){nav{padding:0 24px;}.nav-links{display:none;}.article-header,.article-body{padding-left:24px;padding-right:24px;}.article-header{padding-top:100px;}footer{padding:32px 24px 20px;}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark"><svg width="22" height="22" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="rgba(242,237,228,0.3)" stroke-width="3"/><line x1="50" y1="54" x2="50" y2="16" stroke="#E8940A" stroke-width="4" stroke-linecap="round"/><polygon points="50,5 45,17 55,17" fill="#E8940A"/><circle cx="50" cy="54" r="5" stroke="#E8940A" stroke-width="2.5" fill="none"/><line x1="4" y1="50" x2="16" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/><line x1="96" y1="50" x2="84" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/></svg></div>
+    <div><div class="nav-name">KUNA <span>TORQUE</span> & TOOL</div><div class="nav-tagline">Pick Up · Drop Off · 24 Hr Turnaround</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="article-header">
+  <a class="ah-back" href="articles.html">← All Articles</a>
+  <div class="ah-cat">Standards Reference</div>
+  <h1 class="ah-h1">Why ASME<br>B107.300?</h1>
+  <div class="ah-meta"><span class="ah-date">May 2026</span><span class="ah-author">Kuna Torque & Tool</span></div>
+  <div class="ah-divider"></div>
+</div>
+
+<div class="article-body">
+
+  <p>When you look at a Kuna Torque & Tool calibration certificate, you'll see "ASME B107.300" referenced as the methodology standard. This article explains what that means, why it matters, and why it's the appropriate standard for torque wrench calibration in the US.</p>
+
+  <div class="standard-box">
+    <div class="sb-label">// The Standard</div>
+    <div class="sb-title">ASME B107.300</div>
+    <div class="sb-body">American Society of Mechanical Engineers B107.300 — Torque Instruments. Covers performance requirements, test methods, accuracy tolerances, and marking requirements for torque wrenches, torque screwdrivers, and torque multipliers.</div>
+  </div>
+
+  <h2>What ASME Is</h2>
+
+  <p>The American Society of Mechanical Engineers is one of the oldest and most respected professional engineering organizations in the world. Founded in 1880, ASME develops consensus-based standards used across virtually every field of mechanical engineering — pressure vessels, elevators, pipelines, and yes, hand tools including torque instruments.</p>
+
+  <p>ASME standards are <strong>developed by technical committees</strong> made up of engineers, manufacturers, regulators, and users. They go through rigorous review, public comment, and revision cycles. When ASME says a test method is the standard, it's because hundreds of people with relevant expertise agreed it was — not because one lab or manufacturer decided so.</p>
+
+  <h2>What B107.300 Actually Requires</h2>
+
+  <p>For calibration purposes, the key requirements are:</p>
+
+  <ul>
+    <li><strong>Test points</strong> — calibration must be performed at 20%, 60%, and 100% of the wrench's rated capacity. Testing only at the middle of the range doesn't meet the standard.</li>
+    <li><strong>Accuracy tolerances</strong> — click and dial type wrenches must be within ±4% of indicated value at each test point. Electronic types must be within ±2%.</li>
+    <li><strong>Number of readings</strong> — the standard specifies minimum readings per test point to establish a valid result, not just a single pass.</li>
+    <li><strong>Reference standard requirements</strong> — the equipment used to calibrate must itself be calibrated and traceable to a national standard.</li>
+    <li><strong>Direction of testing</strong> — clockwise testing is required for all wrenches; counter-clockwise testing is required for reversible types.</li>
+  </ul>
+
+  <div class="callout">
+    <p><strong>Why test at 20%, 60%, and 100%?</strong> A wrench that's accurate at its rated capacity may be significantly off at lower settings — and most real-world torque applications don't happen at the wrench's maximum. Testing across the range gives a complete picture of actual accuracy.</p>
+  </div>
+
+  <h2>Why This Standard and Not Another?</h2>
+
+  <p>Other standards exist — ISO, military specifications, OEM requirements. For general commercial and industrial use in the United States, ASME B107.300 is the appropriate choice for several reasons:</p>
+
+  <ul>
+    <li><strong>It's the US consensus standard</strong> — widely recognized by manufacturers, OEMs, quality systems, and auditors</li>
+    <li><strong>It's designed for the tool type</strong> — unlike general measurement standards applied to torque tools, B107.300 was written specifically for torque instruments</li>
+    <li><strong>It's what most quality programs reference</strong> — ISO 9001 quality systems, OEM service requirements, and fleet maintenance programs typically accept or require ASME B107.300 calibration documentation</li>
+    <li><strong>It provides clear pass/fail criteria</strong> — the tolerance requirements are explicit and verifiable, which makes the certificate meaningful</li>
+  </ul>
+
+  <h2>Standards vs Accreditation</h2>
+
+  <p>It's important to distinguish between <strong>following a standard</strong> and <strong>being accredited</strong>. ASME B107.300 is a methodology standard — it defines how to perform the calibration. Accreditation (like ISO 17025) is a third-party verification that a laboratory has a quality management system in place.</p>
+
+  <p>For torque wrench calibration in most shop and fleet environments, following ASME B107.300 with NIST-traceable reference standards produces results that are technically equivalent to accredited lab results. The standard is the same. The traceability is the same. What differs is the overhead — and who pays for it.</p>
+
+  <div class="callout gold">
+    <p><strong>The standard is the substance.</strong> A certificate that references ASME B107.300 and NIST-traceable standards tells you exactly how the calibration was performed and what it was measured against. That's the information that matters for most applications.</p>
+  </div>
+
+  <h2>What "NIST Traceable" Means in This Context</h2>
+
+  <p>ASME B107.300 requires that calibration be performed using reference standards with known, documented accuracy traceable back to national measurement standards. In the US, that means NIST — the National Institute of Standards and Technology, which maintains the national measurement reference standards.</p>
+
+  <p>Kuna Torque & Tool achieves traceability by <strong>sending our reference standards to a NIST-traceable calibration laboratory</strong> for regular calibration. Those lab certificates document the chain: our standards → traceable lab → NIST. When we calibrate your wrenches against our standards, that traceability chain extends to your certificate.</p>
+
+  <p>This is the same traceability model used by the vast majority of calibration services — including many accredited laboratories. The difference is in documentation overhead, not technical substance.</p>
+
+  <div class="article-cta">
+    <h3>Questions About Our Methodology?</h3>
+    <p>We're happy to discuss our calibration process, traceability documentation, or whether our service meets your specific quality requirements.</p>
+    <a href="index.html#quote">Get in Touch →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool</p>
+    <div class="footer-back"><a href="articles.html">← All Articles</a></div>
+    <p>NIST Traceable · ASME B107.300</p>
+  </div>
+</footer>
+</body>
+</html>
