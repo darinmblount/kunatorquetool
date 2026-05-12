@@ -1068,8 +1068,6 @@ footer {
         <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">Dial Indicators</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">Calipers</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">Outside Micrometers</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">Depth Gauges</span>
-        <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">Bore Gauges</span>
         <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--light);background:var(--mid);padding:6px 14px;border:1px solid var(--border);">And More — Just Ask</span>
       </div>
     </div>
@@ -1127,7 +1125,7 @@ footer {
         <div class="pr-row"><span class="pr-range">251 – 600 ft-lb</span><span class="pr-price">$75</span></div>
         <div class="pr-row"><span class="pr-range">Over 600 ft-lb</span><span class="pr-price" style="font-size:14px;color:var(--muted);">Call for quote</span></div>
         <div class="pr-note">
-          On-site minimum $250 · Free pickup within 5 mi of Kuna<br>
+          On-site minimum $50 · Free pickup within 5 mi of Kuna<br>
           $1/mile beyond 5 mi · Volume discounts: 5–9 tools 10% · 10–24 tools 15% · 25+ tools 20%<br>
           Rush / after-hours +50%
         </div>
@@ -1211,14 +1209,6 @@ footer {
         <span class="fq-icon">+</span>
       </div>
       <div class="faq-a"><strong>24 hours or less</strong> from pickup to drop-off. Most jobs come back same day. Rush turnaround available for time-sensitive situations (additional charge applies).</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="fq-text">What's the minimum number of tools per visit?</span>
-        <span class="fq-icon">+</span>
-      </div>
-      <div class="faq-a">Our minimum is <strong>4 wrenches at $250</strong>. If you have fewer, contact us — we may be able to combine your pickup with a nearby customer to make it work.</div>
     </div>
 
     <div class="faq-item">
@@ -1354,7 +1344,7 @@ function calcQuote() {
   var rushCharge = rush ? afterDisc * 0.5 : 0;
   var mileage    = miles <= 5 ? 0 : (miles - 5) * 1;
   var preTotal   = afterDisc + rushCharge + mileage;
-  var minimum    = preTotal < 250 ? 250 - preTotal : 0;
+  var minimum    = preTotal < 50 ? 50 - preTotal : 0;
   var total      = preTotal + minimum;
 
   var lines = '';
