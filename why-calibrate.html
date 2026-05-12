@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Why torque wrench calibration matters — what happens when tools go out of spec, how often to calibrate, and what it costs to ignore it.">
+<meta name="keywords" content="torque wrench calibration, why calibrate torque wrench, torque wrench accuracy, ASME B107.300, NIST traceable calibration">
+<meta property="og:title" content="Why Torque Wrench Calibration Matters — Kuna Torque & Tool">
+<meta property="og:url" content="https://kunatorquetool.com/why-calibrate">
+<link rel="canonical" href="https://kunatorquetool.com/why-calibrate.html">
+<title>Why Torque Wrench Calibration Matters — Kuna Torque & Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0C0A;--dark:#161310;--mid:#231F1B;--border:#2E2926;--orange:#C1440E;--gold:#E8940A;--paper:#F2EDE4;--muted:#6B6358;--light:#B8B0A4;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--ink);}
+::-webkit-scrollbar-thumb{background:var(--orange);}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(14,12,10,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-mark{width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:var(--paper);line-height:1;}
+.nav-name span{color:var(--gold);}
+.nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--paper);}
+.nav-cta{background:var(--orange) !important;color:#fff !important;padding:8px 18px;font-size:8px !important;}
+
+/* ARTICLE HEADER */
+.article-header{padding:120px 48px 72px;border-bottom:1px solid var(--border);position:relative;overflow:hidden;max-width:900px;}
+.ah-back{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:8px;margin-bottom:32px;transition:color .2s;}
+.ah-back:hover{color:var(--paper);}
+.ah-cat{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.ah-cat::before{content:'//';color:var(--muted);}
+.ah-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,7vw,96px);line-height:.9;letter-spacing:2px;color:var(--paper);margin-bottom:28px;}
+.ah-meta{display:flex;gap:32px;align-items:center;}
+.ah-date{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);}
+.ah-author{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:3px;color:var(--muted);}
+.ah-divider{width:60px;height:2px;background:var(--orange);margin-top:28px;}
+
+/* ARTICLE BODY */
+.article-body{max-width:720px;padding:72px 48px 100px;}
+
+.article-body p{font-family:'Barlow',sans-serif;font-size:17px;line-height:1.75;color:#A8A098;margin-bottom:24px;}
+.article-body p strong{color:var(--light);font-weight:600;}
+
+.article-body h2{font-family:'Bebas Neue',sans-serif;font-size:38px;letter-spacing:2px;color:var(--paper);margin:52px 0 20px;line-height:1;}
+.article-body h3{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;letter-spacing:1px;color:var(--light);margin:36px 0 14px;text-transform:uppercase;}
+
+/* callout box */
+.callout{background:var(--mid);border-left:3px solid var(--orange);padding:24px 28px;margin:36px 0;}
+.callout p{font-family:'Barlow Condensed',sans-serif;font-size:17px;color:var(--light);line-height:1.6;margin:0;}
+.callout p strong{color:var(--paper);}
+
+/* stat callout */
+.stat-pull{padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:40px 0;display:flex;gap:40px;align-items:center;}
+.sp-num{font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--orange);line-height:1;flex-shrink:0;}
+.sp-text{font-family:'Barlow Condensed',sans-serif;font-size:18px;color:var(--muted);line-height:1.5;}
+.sp-text strong{color:var(--light);}
+
+.article-body ul{list-style:none;margin:20px 0 28px;}
+.article-body ul li{font-family:'Barlow',sans-serif;font-size:17px;line-height:1.7;color:#A8A098;padding:8px 0 8px 20px;border-bottom:1px solid var(--border);position:relative;}
+.article-body ul li::before{content:'→';position:absolute;left:0;color:var(--orange);}
+.article-body ul li strong{color:var(--light);}
+
+/* CTA at end */
+.article-cta{background:var(--orange);padding:48px;margin-top:64px;}
+.article-cta h3{font-family:'Bebas Neue',sans-serif;font-size:42px;color:#fff;letter-spacing:2px;margin-bottom:12px;}
+.article-cta p{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:rgba(255,255,255,0.7);margin-bottom:24px;line-height:1.5;}
+.article-cta a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;background:rgba(0,0,0,0.2);color:#fff;padding:14px 28px;text-decoration:none;display:inline-block;transition:background .2s;}
+.article-cta a:hover{background:rgba(0,0,0,0.4);}
+
+footer{background:var(--dark);border-top:1px solid var(--border);padding:40px 48px 24px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.footer-back a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back a:hover{color:var(--paper);}
+
+@media(max-width:960px){
+  nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .article-header,.article-body{padding-left:24px;padding-right:24px;}
+  .article-header{padding-top:100px;}
+  .stat-pull{flex-direction:column;gap:16px;}
+  footer{padding:32px 24px 20px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark">
+      <svg width="22" height="22" viewBox="0 0 100 100" fill="none">
+        <circle cx="50" cy="50" r="46" stroke="rgba(242,237,228,0.3)" stroke-width="3"/>
+        <line x1="50" y1="54" x2="50" y2="16" stroke="#E8940A" stroke-width="4" stroke-linecap="round"/>
+        <polygon points="50,5 45,17 55,17" fill="#E8940A"/>
+        <circle cx="50" cy="54" r="5" stroke="#E8940A" stroke-width="2.5" fill="none"/>
+        <line x1="4" y1="50" x2="16" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+        <line x1="50" y1="4" x2="50" y2="16" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+        <line x1="96" y1="50" x2="84" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/>
+      </svg>
+    </div>
+    <div>
+      <div class="nav-name">KUNA <span>TORQUE</span> & TOOL</div>
+      <div class="nav-tagline">Pick Up · Drop Off · 24 Hr Turnaround</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+    <li><a href="index.html#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<div class="article-header">
+  <a class="ah-back" href="articles.html">← All Articles</a>
+  <div class="ah-cat">Why It Matters</div>
+  <h1 class="ah-h1">Why Torque Wrench<br>Calibration Matters</h1>
+  <div class="ah-meta">
+    <span class="ah-date">May 2026</span>
+    <span class="ah-author">Kuna Torque & Tool</span>
+  </div>
+  <div class="ah-divider"></div>
+</div>
+
+<div class="article-body">
+
+  <p>A miscalibrated torque wrench doesn't look different. It doesn't feel different. When it clicks, it sounds exactly the same as a calibrated one. That's the problem.</p>
+
+  <p>It's quietly delivering the wrong torque — and in most applications, nobody finds out until something goes wrong.</p>
+
+  <div class="callout">
+    <p><strong>The core issue:</strong> Torque wrenches drift out of specification over time through normal use — impacts, drops, storage under tension, and simple mechanical wear. Without calibration, you have no way to know how far they've drifted.</p>
+  </div>
+
+  <h2>What Happens When a Wrench Is Out of Spec</h2>
+
+  <p>The consequences depend entirely on what you're torquing. In a low-stakes application — assembling furniture, general maintenance — a 10% error might not matter. But in the environments where torque wrenches are actually critical, that same error can mean:</p>
+
+  <ul>
+    <li><strong>Under-torqued fasteners</strong> that loosen under vibration, leading to component failure</li>
+    <li><strong>Over-torqued fasteners</strong> that stretch, crack, or strip — damaging the part or creating a hidden failure point</li>
+    <li><strong>Warranty voids</strong> if a manufacturer specifies calibrated tools and you can't document it</li>
+    <li><strong>Liability exposure</strong> when something fails and there's no calibration record to show your tools were in spec</li>
+    <li><strong>Failed audits</strong> — ISO, OEM, or fleet compliance programs that require documented calibration</li>
+  </ul>
+
+  <div class="stat-pull">
+    <div class="sp-num">±4%</div>
+    <div class="sp-text">The maximum permissible error for click-type torque wrenches under <strong>ASME B107.300</strong> — the US standard governing torque instrument calibration. A new wrench out of the box can drift outside this tolerance faster than most people assume.</div>
+  </div>
+
+  <h2>How Fast Do Wrenches Drift?</h2>
+
+  <p>There's no universal answer — it depends on the type of wrench, how often it's used, and how it's handled. But some patterns are well established:</p>
+
+  <ul>
+    <li><strong>Click-type wrenches</strong> are the most common and most likely to drift. The internal mechanism is sensitive to drops, impacts, and storage under load.</li>
+    <li><strong>Storing a click wrench at tension</strong> — leaving it set above the minimum — fatigues the spring and accelerates drift.</li>
+    <li><strong>Electronic wrenches</strong> hold calibration better but are more expensive to replace when they fail and require verification of the sensor chain.</li>
+    <li><strong>Dial and beam types</strong> are generally more stable but still require periodic verification.</li>
+  </ul>
+
+  <p>Most quality systems and OEM programs require calibration on an <strong>annual basis at minimum</strong>, with more frequent calibration for high-cycle or safety-critical applications. Some fleet operations calibrate every six months.</p>
+
+  <h2>The Documentation Problem</h2>
+
+  <p>Even if your tools happen to be in spec, if you can't document it, it doesn't exist — at least not in the eyes of an auditor, an OEM warranty claim, or a liability investigation.</p>
+
+  <p>A calibration certificate creates a traceable record: this tool, tested against these standards, on this date, produced these results. It's the difference between "our tools are calibrated" and being able to prove it.</p>
+
+  <div class="callout">
+    <p><strong>NIST traceability</strong> means your calibration was performed using reference standards whose accuracy can be traced back to the National Institute of Standards and Technology — the US national measurement authority. This is what makes a calibration certificate meaningful in an audit or legal context.</p>
+  </div>
+
+  <h2>How Often Should You Calibrate?</h2>
+
+  <p>The short answer: at least once a year, and immediately after any of these events:</p>
+
+  <ul>
+    <li><strong>The wrench was dropped</strong> or subjected to an impact</li>
+    <li><strong>It was used outside its rated range</strong></li>
+    <li><strong>It's been sitting unused</strong> for an extended period at a set torque value</li>
+    <li><strong>Results seem off</strong> — fasteners feel different, parts are failing, something doesn't feel right</li>
+    <li><strong>An audit is coming</strong> and you need current documentation</li>
+  </ul>
+
+  <p>For fleet operations with high tool utilization, six-month intervals are common. For tools used occasionally in controlled shop environments, annual calibration is typically sufficient.</p>
+
+  <h2>The Cost of Not Calibrating</h2>
+
+  <p>Calibration at $30–75 per wrench sounds like an expense. Compared to what? A warranty claim on a $40,000 engine. A failed DOT inspection. A joint failure on a critical assembly. A liability suit because a fastener gave out.</p>
+
+  <p>The cost of calibration is almost always smaller than the cost of the problems it prevents. And more importantly — it gives you a documented defense when something does go wrong and it wasn't your tools.</p>
+
+  <div class="article-cta">
+    <h3>Ready to Get Your Tools Calibrated?</h3>
+    <p>We pick up from your shop, calibrate, and drop back off — within 24 hours. Certificates issued for every tool.</p>
+    <a href="index.html#quote">Build a Quote →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool</p>
+    <div class="footer-back"><a href="articles.html">← All Articles</a></div>
+    <p>NIST Traceable · ASME B107.300</p>
+  </div>
+</footer>
+
+</body>
+</html>
