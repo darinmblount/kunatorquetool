@@ -1409,232 +1409,201 @@ footer {
 </footer>
 
 <script>
-// ── Pricing catalog ──────────────────────────────────────
-var CATALOG = {
-  tw_30:  { label:'Torque Wrench 0–100 ft-lb',        price:30,  group:'torque' },
-  tw_50:  { label:'Torque Wrench 101–250 ft-lb',       price:50,  group:'torque' },
-  tw_75:  { label:'Torque Wrench 251–600 ft-lb',       price:75,  group:'torque' },
-  tw_call:{ label:'Torque Wrench Over 600 ft-lb',      price:0,   group:'torque', call:true },
-  cal_10: { label:'Caliper Under 6"',                  price:10,  group:'hand' },
-  cal_15: { label:'Caliper 6–8"',                      price:15,  group:'hand' },
-  cal_25: { label:'Caliper Over 8"',                   price:25,  group:'hand' },
-  mic_15: { label:'Outside Micrometer 0–1"',           price:15,  group:'hand' },
-  mic_20: { label:'Outside Micrometer 1–3"',           price:20,  group:'hand' },
-  mic_25: { label:'Outside Micrometer 3–6"',           price:25,  group:'hand' },
-  di_15:  { label:'Dial Indicator',                    price:15,  group:'hand' },
-  dg_15:  { label:'Depth Gauge',                       price:15,  group:'hand' },
-  bg_20:  { label:'Bore Gauge',                        price:20,  group:'hand' },
-  pg_15:  { label:'Plug / Ring Gauge',                 price:15,  group:'hand' },
+// ─────────────────────────────────────────
+// DATA
+// ─────────────────────────────────────────
+const CATALOG = {
+  tw_30:  { label:'Torque Wrench 0–100 ft-lb', price:30, group:'torque' },
+  tw_50:  { label:'Torque Wrench 101–250 ft-lb', price:50, group:'torque' },
+  tw_75:  { label:'Torque Wrench 251–600 ft-lb', price:75, group:'torque' },
+  tw_call:{ label:'Torque Wrench Over 600 ft-lb', price:0, group:'torque', call:true },
+
+  cal_10: { label:'Caliper Under 6\"', price:10, group:'hand' },
+  cal_15: { label:'Caliper 6–8\"', price:15, group:'hand' },
+  cal_25: { label:'Caliper Over 8\"', price:25, group:'hand' },
+
+  mic_15: { label:'Micrometer 0–1\"', price:15, group:'hand' },
+  mic_20: { label:'Micrometer 1–3\"', price:20, group:'hand' },
+  mic_25: { label:'Micrometer 3–6\"', price:25, group:'hand' },
+
+  di_15:  { label:'Dial Indicator', price:15, group:'hand' },
+  dg_15:  { label:'Depth Gauge', price:15, group:'hand' },
+  bg_20:  { label:'Bore Gauge', price:20, group:'hand' },
+  pg_15:  { label:'Plug / Ring Gauge', price:15, group:'hand' }
 };
 
-var cart = [];
+let cart = [];
 
+// ─────────────────────────────────────────
+// ADD TO CART
+// ─────────────────────────────────────────
 function addToCart() {
-  var typeKey = document.getElementById('q-type').value;
-  var qty     = Math.max(1, parseInt(document.getElementById('q-item-qty').value) || 1);
-  var item    = CATALOG[typeKey];
+  const typeKey = document.getElementById('q-type').value;
+  const qty = Math.max(1, parseInt(document.getElementById('q-item-qty').value) || 1);
+
+  const item = CATALOG[typeKey];
   if (!item) return;
 
-  // If same type exists, increment qty
-  for (var i = 0; i < cart.length; i++) {
-    if (cart[i].key === typeKey) {
-      cart[i].qty += qty;
-      renderCart();
-      return;
-    }
+  const existing = cart.find(i => i.key === typeKey);
+
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    cart.push({...item, key: typeKey, qty});
   }
-  cart.push({ key: typeKey, label: item.label, price: item.price, qty: qty, call: item.call || false, group: item.group });
+
   renderCart();
 }
 
-function removeItem(idx) {
-  cart.splice(idx, 1);
+// ─────────────────────────────────────────
+// REMOVE / UPDATE
+// ─────────────────────────────────────────
+function removeItem(index) {
+  cart.splice(index, 1);
   renderCart();
 }
 
-function updateQty(idx, val) {
-  var q = parseInt(val);
-  if (q < 1 || isNaN(q)) q = 1;
-  cart[idx].qty = q;
+function updateQty(index, val) {
+  let q = parseInt(val);
+  if (isNaN(q) || q < 1) q = 1;
+
+  cart[index].qty = q;
   renderCart();
 }
 
+// ─────────────────────────────────────────
+// RENDER CART (SAFE HTML)
+// ─────────────────────────────────────────
 function renderCart() {
-  var itemsEl   = document.getElementById('cart-items');
-  var emptyEl   = document.getElementById('cart-empty');
-  var totalsEl  = document.getElementById('cart-totals');
-  var contactEl = document.getElementById('contact-section');
+  const itemsEl = document.getElementById('cart-items');
+  const totalsEl = document.getElementById('cart-totals');
+  const contactEl = document.getElementById('contact-section');
 
   if (cart.length === 0) {
-    itemsEl.innerHTML = '<div id="cart-empty" style="padding:32px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);">No items yet — add tools from the left</div>';
-    totalsEl.style.display  = 'none';
+    itemsEl.innerHTML = `
+      <div style="padding:32px;text-align:center;color:#6B6358;">
+        No items yet — add tools from the left
+      </div>
+    `;
+    totalsEl.style.display = 'none';
     contactEl.style.display = 'none';
     return;
   }
 
-  var rows = '';
-  cart.forEach(function(item, i) {
-    var lineTotal = item.call ? '—' : '$' + (item.price * item.qty).toFixed(2);
-    rows += '<div style="display:grid;grid-template-columns:1fr auto auto auto;gap:12px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border);">';
-    rows += '<div><div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--light);">' + item.label + '</div>';
-    if (item.call) rows += '<div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--orange);">Call for quote</div>';
-    else rows += '<div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:var(--muted);">$' + item.price + ' each</div>';
-    rows += '</div>';
-    rows += '<input type="number" value="' + item.qty + '" min="1" onchange="updateQty(' + i + ',this.value)" style="width:52px;background:var(--mid);border:1px solid var(--border);color:var(--paper);font-family:'Barlow Condensed',sans-serif;font-size:14px;padding:6px 8px;text-align:center;outline:none;-moz-appearance:textfield;">';
-    rows += '<div style="font-family:'Bebas Neue',sans-serif;font-size:18px;color:var(--gold);min-width:60px;text-align:right;">' + lineTotal + '</div>';
-    rows += '<div onclick="removeItem(' + i + ')" style="cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--muted);padding:4px 8px;transition:color .2s;" onmouseover="this.style.color='#C1440E'" onmouseout="this.style.color='var(--muted)'">✕</div>';
-    rows += '</div>';
-  });
-  itemsEl.innerHTML = rows;
+  itemsEl.innerHTML = cart.map((item, i) => {
+    const lineTotal = item.call ? '—' : `$${(item.price * item.qty).toFixed(2)}`;
 
-  totalsEl.style.display  = 'block';
+    return `
+      <div style="display:grid;grid-template-columns:1fr auto auto auto;gap:10px;padding:10px;border-bottom:1px solid #2E2926;">
+        <div>
+          <div style="color:#B8B0A4">${item.label}</div>
+          ${item.call ? '<div style="color:#C1440E;font-size:10px;">Call for quote</div>' : `<div style="color:#6B6358;font-size:10px;">$${item.price} each</div>`}
+        </div>
+
+        <input type="number" value="${item.qty}" min="1"
+          onchange="updateQty(${i}, this.value)"
+          style="width:50px;background:#231F1B;border:1px solid #2E2926;color:white;text-align:center">
+
+        <div style="color:#E8940A;min-width:60px;text-align:right;">
+          ${lineTotal}
+        </div>
+
+        <div onclick="removeItem(${i})" style="cursor:pointer;">✕</div>
+      </div>
+    `;
+  }).join('');
+
+  totalsEl.style.display = 'block';
   contactEl.style.display = 'block';
+
   updateCart();
 }
 
+// ─────────────────────────────────────────
+// CALCULATIONS
+// ─────────────────────────────────────────
 function updateCart() {
   if (cart.length === 0) return;
 
-  var miles = parseInt(document.getElementById('q-miles').value);
-  var rush  = parseInt(document.getElementById('q-rush').value);
+  const miles = parseInt(document.getElementById('q-miles').value);
+  const rush = parseInt(document.getElementById('q-rush').value);
 
   document.getElementById('miles-display').textContent =
     miles === 0 ? 'Within Kuna (free)' : miles + ' miles';
 
-  // Count torque tools for discount
-  var torqueQty = 0, subtotal = 0, hasCall = false;
-  cart.forEach(function(item) {
-    if (item.group === 'torque') torqueQty += item.qty;
+  let subtotal = 0;
+  let torqueQty = 0;
+  let hasCall = false;
+
+  cart.forEach(item => {
     if (!item.call) subtotal += item.price * item.qty;
+    if (item.group === 'torque') torqueQty += item.qty;
     if (item.call) hasCall = true;
   });
 
-  // Volume discount on torque tools only
-  var discPct = 0, discLabel = '';
-  if (torqueQty >= 25) { discPct = 0.20; discLabel = '20% fleet discount (25+ torque tools)'; }
-  else if (torqueQty >= 10) { discPct = 0.15; discLabel = '15% fleet discount (10–24 torque tools)'; }
-  else if (torqueQty >= 5)  { discPct = 0.10; discLabel = '10% fleet discount (5–9 torque tools)'; }
+  let discPct = tollDiscount(torqueQty);
+  let torqueSub = cart
+    .filter(i => i.group === 'torque' && !i.call)
+    .reduce((sum, i) => sum + i.price * i.qty, 0);
 
-  // Discount applies only to torque subtotal
-  var torqueSub = 0;
-  cart.forEach(function(item) { if (item.group === 'torque' && !item.call) torqueSub += item.price * item.qty; });
-  var discount    = torqueSub * discPct;
-  var afterDisc   = subtotal - discount;
-  var rushCharge  = rush ? afterDisc * 0.5 : 0;
-  var mileage     = miles <= 5 ? 0 : (miles - 5);
-  var preMin      = afterDisc + rushCharge + mileage;
-  var minimum     = preMin < 250 ? 250 - preMin : 0;
-  var total       = preMin + minimum;
+  let discount = torqueSub * discPct;
+  let afterDisc = subtotal - discount;
+  let rushCharge = rush ? afterDisc * 0.5 : 0;
+  let mileage = miles <= 5 ? 0 : (miles - 5);
 
-  var lines = '';
-  lines += tline('Calibration subtotal', '$' + subtotal.toFixed(2));
-  if (discount > 0) lines += tline('Torque fleet discount (' + discLabel + ')', '−$' + discount.toFixed(2));
-  if (rushCharge > 0) lines += tline('Rush surcharge (+50%)', '+$' + rushCharge.toFixed(2));
-  lines += tline(miles <= 5 ? 'Mileage — free within 5 mi' : 'Mileage (' + (miles-5) + ' mi × $1)', miles <= 5 ? 'Free' : '+$' + mileage.toFixed(2));
-  if (minimum > 0) lines += tline('On-site minimum adjustment', '+$' + minimum.toFixed(2));
-  if (hasCall) lines += tline('Over 600 ft-lb items', 'Quoted separately');
+  let preMin = afterDisc + rushCharge + mileage;
+  let minimum = preMin < 250 ? 250 - preMin : 0;
+  let total = preMin + minimum;
 
-  document.getElementById('totals-lines').innerHTML = lines;
-  document.getElementById('grand-total').textContent = '$' + total.toFixed(2);
+  document.getElementById('grand-total').textContent = `$${total.toFixed(2)}`;
 
-  var note = 'Estimate only. Final price confirmed at booking. $250 minimum per visit.';
-  if (hasCall) note += ' Over-600 ft-lb tools require a separate quote — we'll discuss when we call.';
-  document.getElementById('totals-note').textContent = note;
+  document.getElementById('totals-lines').innerHTML = `
+    ${line('Subtotal', subtotal)}
+    ${discount > 0 ? line('Discount', -discount) : ''}
+    ${rushCharge > 0 ? line('Rush', rushCharge) : ''}
+    ${line('Mileage', mileage)}
+    ${minimum > 0 ? line('Minimum', minimum) : ''}
+    ${hasCall ? line('Over 600 ft-lb', 'Quoted separately') : ''}
+  `;
 }
 
-function tline(label, val) {
-  return '<div style="display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);">'
-    + '<span style="font-family:'Barlow Condensed',sans-serif;font-size:14px;color:var(--muted);">' + label + '</span>'
-    + '<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--light);">' + val + '</span>'
-    + '</div>';
+function tollDiscount(qty) {
+  if (qty >= 25) return 0.20;
+  if (qty >= 10) return 0.15;
+  if (qty >= 5) return 0.10;
+  return 0;
 }
 
+function line(label, val) {
+  if (typeof val === 'string') {
+    return `<div style="display:flex;justify-content:space-between;"><span>${label}</span><span>${val}</span></div>`;
+  }
+  return `<div style="display:flex;justify-content:space-between;"><span>${label}</span><span>$${Math.abs(val).toFixed(2)}</span></div>`;
+}
+
+// ─────────────────────────────────────────
+// EMAIL
+// ─────────────────────────────────────────
 function sendQuote() {
-  var name    = document.getElementById('q-name').value.trim();
-  var company = document.getElementById('q-company').value.trim();
-  var phone   = document.getElementById('q-phone').value.trim();
-  var email   = document.getElementById('q-email').value.trim();
-  var notes   = document.getElementById('q-notes').value.trim();
-  var miles   = parseInt(document.getElementById('q-miles').value);
-  var rush    = parseInt(document.getElementById('q-rush').value);
+  const name = document.getElementById('q-name').value.trim();
+  const phone = document.getElementById('q-phone').value.trim();
+  const email = document.getElementById('q-email').value.trim();
 
   if (!name || (!phone && !email)) {
-    alert('Please enter your name and at least a phone number or email.');
-    return;
-  }
-  if (cart.length === 0) {
-    alert('Please add at least one item to your quote.');
+    alert("Enter name + phone or email");
     return;
   }
 
-  // Build email body
-  var body = 'QUOTE REQUEST — Kuna Torque & Tool
+  let body = `QUOTE REQUEST\n\nName: ${name}\n`;
 
-';
-  body += 'Name: ' + name + '
-';
-  if (company) body += 'Company: ' + company + '
-';
-  if (phone)   body += 'Phone: ' + phone + '
-';
-  if (email)   body += 'Email: ' + email + '
-';
-  body += 'Distance from Kuna: ' + (miles === 0 ? 'Within Kuna' : miles + ' miles') + '
-';
-  body += 'Rush service: ' + (rush ? 'Yes' : 'No') + '
-';
-  if (notes) body += 'Notes / Preferred Date: ' + notes + '
-';
-  body += '
-ITEMS:
-';
-  cart.forEach(function(item) {
-    body += '  ' + item.qty + 'x ' + item.label;
-    if (item.call) body += ' — Call for quote';
-    else body += ' — $' + (item.price * item.qty).toFixed(2);
-    body += '
-';
+  cart.forEach(item => {
+    body += `${item.qty}x ${item.label}\n`;
   });
 
-  // Recalculate total for email
-  var torqueQty = 0, subtotal = 0;
-  cart.forEach(function(item) {
-    if (item.group === 'torque') torqueQty += item.qty;
-    if (!item.call) subtotal += item.price * item.qty;
-  });
-  var torqueSub = 0;
-  cart.forEach(function(item) { if (item.group === 'torque' && !item.call) torqueSub += item.price * item.qty; });
-  var discPct = torqueQty >= 25 ? 0.20 : torqueQty >= 10 ? 0.15 : torqueQty >= 5 ? 0.10 : 0;
-  var discount = torqueSub * discPct;
-  var afterDisc = subtotal - discount;
-  var rushCharge = rush ? afterDisc * 0.5 : 0;
-  var mileage = miles <= 5 ? 0 : (miles - 5);
-  var preMin = afterDisc + rushCharge + mileage;
-  var minimum = preMin < 250 ? 250 - preMin : 0;
-  var total = preMin + minimum;
-
-  body += '
-ESTIMATED TOTAL: $' + total.toFixed(2) + '
-';
-  body += '(Estimate only. Final price confirmed at booking.)
-';
-
-  var mailto = 'mailto:kuna@kunatorquetool.com'
-    + '?subject=' + encodeURIComponent('Quote Request — ' + (company || name))
-    + '&body='    + encodeURIComponent(body);
-
-  window.location.href = mailto;
-
-  // Show success
-  document.getElementById('contact-section').style.display = 'none';
-  document.getElementById('quote-success').style.display = 'block';
+  window.location.href =
+    "mailto:kuna@kunatorquetool.com?subject=Quote Request&body=" +
+    encodeURIComponent(body);
 }
-
-// Slider init
-document.addEventListener('DOMContentLoaded', function() {
-  var slider = document.getElementById('q-miles');
-  if (slider) slider.addEventListener('input', updateCart);
-});
 </script>
 
 </body>
