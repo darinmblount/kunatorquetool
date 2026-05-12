@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="About Kuna Torque & Tool — Navy veteran, honor graduate of calibration school, USS Nimitz calibration lab, 10 years in the industry, calibration program consultant.">
+<meta name="keywords" content="calibration consultant Idaho, calibration program setup, calibration lab management, ISO calibration program, pharmaceutical calibration cGMP">
+<link rel="canonical" href="https://kunatorquetool.com/about.html">
+<title>About — Kuna Torque & Tool</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800&family=Barlow:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0E0C0A;--dark:#161310;--mid:#231F1B;--border:#2E2926;--orange:#C1440E;--gold:#E8940A;--paper:#F2EDE4;--muted:#6B6358;--light:#B8B0A4;}
+*{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+body{background:var(--ink);color:var(--paper);font-family:'Barlow',sans-serif;overflow-x:hidden;}
+::-webkit-scrollbar{width:3px;}::-webkit-scrollbar-track{background:var(--ink);}::-webkit-scrollbar-thumb{background:var(--orange);}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:64px;background:rgba(14,12,10,0.95);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-mark{width:36px;height:36px;border:1.5px solid rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-name{font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:3px;color:var(--paper);line-height:1;}
+.nav-name span{color:var(--gold);}
+.nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-top:2px;}
+.nav-links{display:flex;align-items:center;gap:32px;list-style:none;}
+.nav-links a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--paper);}
+.nav-cta{background:var(--orange) !important;color:#fff !important;padding:8px 18px;font-size:8px !important;}
+
+/* PAGE HEADER */
+.page-header{padding:120px 48px 72px;position:relative;overflow:hidden;}
+.page-header::after{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(193,68,14,0.08) 0%,transparent 70%);pointer-events:none;}
+.ph-eyebrow{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;}
+.ph-eyebrow::before{content:'//';color:var(--muted);}
+.ph-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,8vw,110px);line-height:.88;letter-spacing:2px;color:var(--paper);margin-bottom:24px;}
+.ph-sub{font-family:'Barlow Condensed',sans-serif;font-size:18px;color:var(--muted);line-height:1.6;max-width:560px;}
+
+/* CREDENTIALS STRIP */
+.creds-strip{background:var(--mid);padding:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;overflow:hidden;}
+.cred-item{padding:20px 36px;border-right:1px solid var(--border);flex-shrink:0;}
+.cred-item:last-child{border-right:none;}
+.ci-num{font-family:'Bebas Neue',sans-serif;font-size:36px;color:var(--orange);line-height:1;}
+.ci-label{font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;margin-top:3px;}
+
+/* TIMELINE */
+.timeline-section{padding:100px 48px;background:var(--dark);border-top:1px solid var(--border);}
+.timeline{max-width:760px;margin-top:48px;}
+.tl-item{display:grid;grid-template-columns:120px 1fr;gap:32px;margin-bottom:48px;position:relative;}
+.tl-item::before{content:'';position:absolute;left:119px;top:8px;bottom:-48px;width:1px;background:var(--border);}
+.tl-item:last-child::before{display:none;}
+.tl-year{font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--orange);letter-spacing:2px;padding-top:2px;text-align:right;}
+.tl-dot{position:absolute;left:112px;top:8px;width:16px;height:16px;background:var(--orange);border-radius:50%;}
+.tl-content{}
+.tl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--paper);margin-bottom:8px;letter-spacing:.5px;}
+.tl-body{font-family:'Barlow',sans-serif;font-size:15px;color:var(--muted);line-height:1.7;}
+.tl-body strong{color:var(--light);}
+.tl-tag{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:7px;letter-spacing:2px;color:var(--orange);background:rgba(193,68,14,0.1);padding:3px 10px;margin-bottom:10px;text-transform:uppercase;}
+
+/* CONSULTING SECTION */
+.consulting-section{padding:100px 48px;background:var(--ink);border-top:1px solid var(--border);}
+.consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:56px;align-items:start;}
+.consult-left p{font-family:'Barlow',sans-serif;font-size:17px;color:#A8A098;line-height:1.75;margin-bottom:20px;}
+.consult-left p strong{color:var(--light);}
+.services-list{margin-top:40px;}
+.sl-item{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--border);}
+.sl-icon{color:var(--orange);font-size:12px;flex-shrink:0;margin-top:3px;font-family:'IBM Plex Mono',monospace;}
+.sl-content{}
+.sl-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:17px;color:var(--paper);margin-bottom:4px;}
+.sl-desc{font-family:'Barlow',sans-serif;font-size:14px;color:var(--muted);line-height:1.6;}
+.consult-cta{background:var(--mid);border:1px solid var(--border);border-top:2px solid var(--orange);padding:40px;}
+.cc-head{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:2px;color:var(--paper);margin-bottom:16px;line-height:1;}
+.cc-body{font-family:'Barlow Condensed',sans-serif;font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:28px;}
+.cc-quals{margin-bottom:28px;}
+.cq-item{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.cq-item::before{content:'✓';color:var(--gold);}
+.cc-btn{display:inline-block;background:var(--orange);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;padding:14px 28px;text-decoration:none;transition:background .2s;}
+.cc-btn:hover{background:var(--gold);}
+
+footer{background:var(--dark);border-top:1px solid var(--border);padding:48px 48px 28px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-bottom p{font-family:'IBM Plex Mono',monospace;font-size:8px;letter-spacing:2px;color:var(--muted);}
+.footer-back a{font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-decoration:none;transition:color .2s;}
+.footer-back a:hover{color:var(--paper);}
+
+@media(max-width:960px){
+  nav{padding:0 24px;}.nav-links{display:none;}
+  .page-header,.timeline-section,.consulting-section{padding-left:24px;padding-right:24px;}
+  .page-header{padding-top:100px;}
+  .tl-item{grid-template-columns:80px 1fr;gap:20px;}
+  .tl-item::before{left:79px;}
+  .tl-dot{left:72px;}
+  .consult-grid{grid-template-columns:1fr;}
+  .creds-strip{flex-wrap:wrap;}
+  footer{padding:32px 24px 20px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <div class="nav-mark"><svg width="22" height="22" viewBox="0 0 100 100" fill="none"><circle cx="50" cy="50" r="46" stroke="rgba(242,237,228,0.3)" stroke-width="3"/><line x1="50" y1="54" x2="50" y2="16" stroke="#E8940A" stroke-width="4" stroke-linecap="round"/><polygon points="50,5 45,17 55,17" fill="#E8940A"/><circle cx="50" cy="54" r="5" stroke="#E8940A" stroke-width="2.5" fill="none"/><line x1="4" y1="50" x2="16" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/><line x1="96" y1="50" x2="84" y2="50" stroke="rgba(242,237,228,0.3)" stroke-width="3" stroke-linecap="square"/></svg></div>
+    <div><div class="nav-name">KUNA <span>TORQUE</span> & TOOL</div><div class="nav-tagline">Pick Up · Drop Off · 24 Hr Turnaround</div></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#how">How It Works</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="articles.html">Articles</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="index.html#quote" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="ph-eyebrow">Background</div>
+  <h1 class="ph-h1">Built on<br>Real Experience.</h1>
+  <p class="ph-sub">Navy veteran. Honor graduate of calibration school. A decade in the industry spanning military labs, accredited commercial facilities, pharmaceutical manufacturing, and everything in between.</p>
+</div>
+
+<!-- CREDENTIALS STRIP -->
+<div class="creds-strip">
+  <div class="cred-item"><div class="ci-num">10+</div><div class="ci-label">Years in Calibration</div></div>
+  <div class="cred-item"><div class="ci-num">USN</div><div class="ci-label">Navy Veteran</div></div>
+  <div class="cred-item"><div class="ci-num">1st</div><div class="ci-label">Honor Graduate, Cal School</div></div>
+  <div class="cred-item"><div class="ci-num">1000s</div><div class="ci-label">Instruments Calibrated</div></div>
+  <div class="cred-item"><div class="ci-num">ISO</div><div class="ci-label">17025 Lab Experience</div></div>
+  <div class="cred-item"><div class="ci-num">cGMP</div><div class="ci-label">Pharma & FDA Audits</div></div>
+</div>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="section-label" style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;"><span style="color:var(--muted)">//</span> Career</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5vw,72px);letter-spacing:2px;line-height:.95;color:var(--paper);">The Background.</h2>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-year">Start</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-tag">United States Navy</div>
+        <div class="tl-title">Calibration School — Honor Graduate</div>
+        <div class="tl-body">Completed the Navy's calibration technician training program and graduated at the top of the class. The Navy's calibration program is one of the most rigorous in the world — covering mechanical, electrical, RF, pressure, temperature, dimensional, optical, and acoustical measurement across the full spectrum of military instrumentation.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">USN</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-tag">USS Nimitz — CVN-68</div>
+        <div class="tl-title">Shipboard Calibration Laboratory — RF Technician</div>
+        <div class="tl-body">Served in the calibration laboratory aboard USS Nimitz, one of the world's largest aircraft carriers. Calibrated thousands of instruments across every category — electronics, mechanical, pressure, temperature, sound level, light, particle counters, torque, and specialized military equipment. <strong>RF calibration specialist</strong> responsible for maintaining the accuracy of communications and electronic warfare measurement equipment in an operational military environment where calibration failures have direct mission consequences.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">Civilian</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-tag">Commercial Industry</div>
+        <div class="tl-title">Calibration Lab Management — Accredited & Non-Accredited</div>
+        <div class="tl-body">Transitioned to commercial calibration work, managing both ISO 17025 accredited and non-accredited calibration laboratories. This dual experience — operating under rigorous third-party audit requirements and also running lean, traceable operations without the accreditation overhead — informs how we think about what calibration quality actually requires versus what the industry sometimes oversells.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">Pharma</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-tag">Pharmaceutical Manufacturing</div>
+        <div class="tl-title">Calibration Program Development — cGMP, ISO, FDA</div>
+        <div class="tl-body">Developed calibration management software and built calibration programs from the ground up for pharmaceutical manufacturing facilities. These environments operate under <strong>Current Good Manufacturing Practice (cGMP) regulations</strong> and face FDA audits where calibration documentation is not optional — it's a regulatory requirement with direct consequences for product release decisions. Managed calibration programs through ISO audits and FDA inspections using purpose-built software systems.</div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-year">Now</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <div class="tl-tag">Kuna, Idaho</div>
+        <div class="tl-title">Kuna Torque & Tool — Mobile Calibration & Consulting</div>
+        <div class="tl-body">Founded Kuna Torque & Tool to bring professional-grade calibration directly to shops and fleets across the Treasure Valley — without the lab overhead that most customers don't need. Calibration service focused on torque tools with pickup and dropoff, plus consulting services for organizations that need help building internal calibration programs, managing instrument inventory, or preparing for quality audits.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONSULTING SECTION -->
+<section class="consulting-section" id="consulting">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:5px;color:var(--orange);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:14px;"><span style="color:var(--muted)">//</span> Consulting Services</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(44px,5vw,72px);letter-spacing:2px;line-height:.95;color:var(--paper);margin-bottom:0;">Calibration<br>Program<br>Consulting.</h2>
+
+  <div class="consult-grid">
+    <div class="consult-left">
+      <p>Beyond the wrench calibration service, the depth of background here extends to <strong>building and managing calibration programs</strong> — from scratch or from a mess someone left behind.</p>
+      <p>If your organization needs to set up an internal calibration lab, get a calibration management system in place, pass an audit, or simply get control of a growing instrument inventory, this is a specific and uncommon skill set.</p>
+      <p>Most calibration consultants come from one environment. This background spans <strong>military, commercial, pharmaceutical, and ISO-regulated industries</strong> — and includes hands-on software development for calibration management systems, not just advising on them.</p>
+
+      <div class="services-list">
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Calibration Program Setup</div>
+            <div class="sl-desc">Building a calibration program from the ground up — instrument inventory, recall systems, procedures, records, and the documentation structure to survive an audit.</div>
+          </div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Internal Lab Development</div>
+            <div class="sl-desc">Setting up an in-house calibration capability — equipment selection, procedure development, technician training, and the quality system to support it.</div>
+          </div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Instrument Inventory Management</div>
+            <div class="sl-desc">Getting control of what you have, where it is, when it was last calibrated, and when it's due — the foundation of any working calibration program.</div>
+          </div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Audit Preparation</div>
+            <div class="sl-desc">ISO 9001, ISO 17025, FDA, cGMP — preparing calibration documentation and programs for third-party audit. Includes gap analysis, remediation, and mock audit support.</div>
+          </div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Technician Training</div>
+            <div class="sl-desc">Training your in-house staff on calibration principles, procedures, documentation requirements, and measurement uncertainty concepts.</div>
+          </div>
+        </div>
+        <div class="sl-item">
+          <div class="sl-icon">→</div>
+          <div class="sl-content">
+            <div class="sl-title">Calibration Software Advisory</div>
+            <div class="sl-desc">Selecting, configuring, or building calibration management software for your environment. Background includes developing custom calibration management systems from scratch.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="consult-cta">
+      <div class="cc-head">Let's Talk About Your Program</div>
+      <div class="cc-body">Whether you need a calibration program built from scratch, an existing one cleaned up, or help getting through an audit — the background to help is here.</div>
+      <div class="cc-quals">
+        <div class="cq-item">Navy calibration school — honor graduate</div>
+        <div class="cq-item">USS Nimitz shipboard calibration lab</div>
+        <div class="cq-item">ISO 17025 accredited lab management</div>
+        <div class="cq-item">Pharmaceutical / cGMP program development</div>
+        <div class="cq-item">FDA audit experience</div>
+        <div class="cq-item">Custom calibration software development</div>
+        <div class="cq-item">10+ years field calibration experience</div>
+      </div>
+      <a href="mailto:kuna@kunatorquetool.com" class="cc-btn">Get in Touch →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-bottom">
+    <p>© 2026 Kuna Torque & Tool — All rights reserved</p>
+    <div class="footer-back"><a href="index.html">← Back to main site</a></div>
+    <p>NIST Traceable · ASME B107.300</p>
+  </div>
+</footer>
+</body>
+</html>
